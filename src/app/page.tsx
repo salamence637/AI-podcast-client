@@ -22,6 +22,7 @@ export default function Home() {
       setError("您已达到最大使用次数（3次）");
       return;
     }
+    
     setError("");
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/generate`, {
