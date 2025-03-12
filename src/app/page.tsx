@@ -25,7 +25,7 @@ export default function Home() {
     }
     setError("");
     try {
-      const res = await fetch(`${baseURL}/generate`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic, tts: true }),
