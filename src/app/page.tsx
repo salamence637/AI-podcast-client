@@ -17,7 +17,6 @@ export default function Home() {
       setUsageCount(parseInt(count));
     }
   }, []);
-
   const handleGenerate = async () => {
     if (usageCount >= 3) {
       setError("您已达到最大使用次数（3次）");
