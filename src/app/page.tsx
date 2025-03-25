@@ -65,20 +65,22 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-blue-50 p-6 font-sans">
-      <h1 className="text-3xl font-bold text-primary mb-4">AI 播客生成</h1>
+      <h1 className="text-3xl font-bold text-primary mb-4">
+        AI Podcast Generation
+      </h1>
       <div className="mb-4">
         <input
           type="text"
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          placeholder="请输入播客话题"
+          placeholder="Please input the topic"
           className="px-4 py-2 w-80 rounded border border-gray-300"
         />
         <button
           onClick={handleGenerate}
           className="ml-2 px-4 py-2 rounded bg-primary text-white hover:bg-secondary"
         >
-          生成播客
+          generate
         </button>
       </div>
       {error && <div className="text-red-500 mb-4">{error}</div>}
@@ -109,7 +111,7 @@ export default function Home() {
           ))}
         </div>
       )}
-      <div className="mt-4 text-gray-600">使用次数：{usageCount} / 3</div>
+      <div className="mt-4 text-gray-600">number of uses {usageCount} / 3</div>
     </div>
   );
 }
