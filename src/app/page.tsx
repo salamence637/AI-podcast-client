@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
   const handleGenerate = async () => {
     if (usageCount >= 3) {
-      setError("您已达到最大使用次数（3次）");
+      setError("You have reached the maximum usage (3 times)");
       return;
     }
 
@@ -40,10 +40,10 @@ export default function Home() {
         setUsageCount(newCount);
         localStorage.setItem("usageCount", newCount.toString());
       } else {
-        setError("服务器返回的数据不完整");
+        setError("Not complete data");
       }
     } catch (err: any) {
-      setError("发生错误：" + err.message);
+      setError("Error occured" + err.message);
     }
   };
 
@@ -111,7 +111,9 @@ export default function Home() {
           ))}
         </div>
       )}
-      <div className="mt-4 text-gray-600">number of uses {usageCount} / 3</div>
+      <div className="mt-4 text-gray-600">
+        number of uses {Math.min(3, usageCount)} / 3
+      </div>
     </div>
   );
 }
